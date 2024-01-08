@@ -1,0 +1,13 @@
+{% extends 'usuarios/base.html' %}
+{% block conteudo %}
+
+<div class="container">
+    <h1>Confirmação de exclusão</h1>
+    <p>Tem certeza de que deseja excluir o usuário?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Confirmar exclusão</button>
+    </form>
+</div>
+
+{% endblock %}

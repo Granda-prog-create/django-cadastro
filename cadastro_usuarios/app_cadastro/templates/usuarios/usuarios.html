@@ -9,18 +9,20 @@
             <th>id</th>
             <th>nome</th>
             <th>idade</th>
+            <th>Ações</th>
         </tr>
-        <!-- Laço de repetição para o {} funcionar -->
+        
         {% for usuario in usuarios %}
         <tr>
-            <td>{{usuario.id_usuario}}</td>
-            <td>{{usuario.nome}}</td>
-            <td>{{usuario.idade}}</td>
+            <td>{{ usuario.id_usuario }}</td>
+            <td>{{ usuario.nome }}</td>
+            <td>{{ usuario.idade }}</td>
+            <td>
+                <a href="{% url 'deletar_usuario' usuario.id_usuario %}" class="btn btn-danger">Deletar</a>
+            </td>
         </tr>
         {% endfor %}
     </table>
+</div>
 
-
-</div> 
 {% endblock %}
- 
