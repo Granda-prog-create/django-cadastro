@@ -1,0 +1,15 @@
+<!-- Seu arquivo editar_usuario.html -->
+{% extends 'usuarios/base.html' %}
+{% block conteudo %}
+
+<div class="container">
+    <h1>Editar Usuário</h1>
+    <form method="post">
+        {% csrf_token %}
+        Nome: <input name="nome" class="form-control" type="text" value="{{ usuario.nome }}"><br>
+        Idade: <input name="idade" class="form-control" type="text" value="{{ usuario.idade }}"><br>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -21,7 +21,7 @@ Essa página está dentro da pasta templates.
 python3 manage.py runserver. Se estiver no Windows, digite python manage.py runserver 
 
 
-# Fazer a migração do banco de dados 
+# Fazer a migração do banco de dados  
 
 Faça as configurações como estão no models.py e após isso, digite no terminal python3 manage.py makemigrations.  No Windows, python manage.py makemigrations 
 
