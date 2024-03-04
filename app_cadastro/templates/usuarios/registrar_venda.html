@@ -1,0 +1,14 @@
+{% extends 'usuarios/base.html' %}
+{% block conteudo %}
+
+<div class="container">
+    <h1>Registrar Venda</h1>
+    <form method="post">
+        {% csrf_token %}
+        Produto: <input name="produto" class="form-control" type="text"><br>
+        Valor: <input name="valor" class="form-control" type="number"><br>
+        <button type="submit" class="btn btn-primary">Registrar Venda</button>
+    </form>
+</div>
+
+{% endblock %}

@@ -3,12 +3,12 @@
 
 <div class="container">
     <h1>Confirmação de exclusão</h1>
-    <p>Tem certeza de que deseja excluir o usuário?</p>
+    <p>Tem certeza de que deseja excluir o usuário {{ usuario.nome }}?</p>
     <form method="post" action="{% url 'deletar_usuario' usuario.id_usuario %}">
         {% csrf_token %}
         <button type="submit" class="btn btn-danger mr-2">Confirmar exclusão</button>
-        <a href="{% url 'listagem_usuarios' %}" class="btn btn-secondary">Não</a>
+        <a href="{% url 'listagem_usuarios' %}" class="btn btn-secondary">Cancelar</a>
     </form>
 </div>
 
-{% endblock %}  
+{% endblock %}
