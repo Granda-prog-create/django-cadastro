@@ -6,21 +6,17 @@ def home(request):
     return render(request, 'usuarios/home.html')
 
 def usuarios(request):
-    valor_digitado = request.POST.get('valor_digitado')  # Acessar valor digitado
-
     if request.method == 'POST':
         novo_usuario = Usuario()
         novo_usuario.nome = request.POST.get('nome')
         novo_usuario.produto = request.POST.get('produto')
 
-        # Substituir vírgulas por pontos no valor e converter para Decimal
-        valor = request.POST.get('valor').replace(',', '.')
+        # Converter o valor para Decimal antes de salvar
+        valor = request.POST.get('valor').replace(',', '.')  # Substituir vírgula por ponto
         novo_usuario.valor = Decimal(valor)
-
         novo_usuario.save()
-
     usuarios = Usuario.objects.all()
-    return render(request, 'usuarios/usuarios.html', {'usuarios': usuarios, 'valor_digitado': valor_digitado})
+    return render(request, 'usuarios/usuarios.html', {'usuarios': usuarios})
 
 def deletar_usuario(request, usuario_id):
     usuario = Usuario.objects.get(id_usuario=usuario_id)

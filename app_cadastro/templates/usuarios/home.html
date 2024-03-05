@@ -1,16 +1,17 @@
 {% extends 'usuarios/base.html' %}
 {% block conteudo %}
 
-    <!-- Enviar cadastro para o servidor -->
-    <form action="{% url 'listagem_usuarios' %}" method="post">
-      {% csrf_token %}
-        <!-- Centralizar a navbar -->
-      <div style="text-align: center" class="container">
-        <h1>Cadastro de Produtos</h1>
-        Nome: <input name="nome" class="form-control-sm" type="text"> <!-- Atualização: Nome -->
-        Produto: <input name="produto" class="form-control-sm" type="text"> <!-- Adição: Produto -->
-        Valor: <input name="valor" class="form-control-sm" type="text">
-        <button class="form-control-sm">Enviar</button> 
-      </div>
-    </form> 
+<!-- Enviar cadastro para o servidor -->
+<form action="{% url 'listagem_usuarios' %}" method="post">
+  {% csrf_token %}
+  <!-- Centralizar a navbar -->
+  <div style="text-align: center" class="container">
+    <h1>Cadastro de Produtos</h1>
+    Nome: <input name="nome" class="form-control-sm" type="text"> <!-- Atualização: Nome -->
+    Produto: <input name="produto" class="form-control-sm" type="text"> <!-- Adição: Produto -->
+    Valor: <input name="valor" class="form-control-sm" type="number" step="0.01"> <!-- Adição: Tipo number para o valor -->
+    <button class="form-control-sm">Enviar</button> 
+  </div>
+</form> 
+
 {% endblock %}
