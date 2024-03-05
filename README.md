@@ -1,6 +1,6 @@
-# Cadastro de usuários
+# Cadastro de Produtos
 
-Esse projeto faz o CRUD de usuários. 
+Esse projeto faz o CRUD de produtos. 
 
 O objetivo é para estudo do Python Django. 
 
